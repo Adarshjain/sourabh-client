@@ -1,0 +1,17 @@
+.breadcrumb {
+  display: flex;
+  font-size: 14px;
+  padding: 8px 24px;
+
+  &__ {
+    &item {
+      margin: 0 4px;
+
+      &:after{
+        content: '>';
+        left: 4px;
+        position: relative;
+      }
+    }
+  }
+}

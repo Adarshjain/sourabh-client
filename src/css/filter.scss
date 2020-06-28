@@ -1,0 +1,109 @@
+.filter {
+  &__ {
+    &container {
+      position: fixed;
+      top: 100%;
+      height: 100vh;
+      width: 100vw;
+      transition: top 0.5s ease-in-out;
+      z-index: 20;
+      background-color: white;
+    }
+
+    &header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 24px;
+      position: relative;
+      align-items: center;
+
+      &-title {
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      &::after {
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        background: linear-gradient(to right, rgb(222, 87, 229), rgb(136, 99, 251));
+        content: '';
+        bottom: 0;
+        left: 0;
+      }
+    }
+
+    &accordion {
+      &- {
+        &anchor {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 12px 24px;
+          border-bottom: 1px solid #d3d3d3;
+        }
+
+        &content {
+          max-height: 0;
+          overflow: hidden;
+          transition: all 0.3s ease-in-out;
+          background-color: rgba(222, 87, 229,0.08);
+
+          &--open {
+            max-height: 800px;
+          }
+        }
+      }
+    }
+
+    &apply {
+      &- {
+        &cta {
+          //margin: 8px auto;
+          background: linear-gradient(to right, rgb(222, 87, 229), rgb(136, 99, 251));
+          padding: 12px;
+          text-align: center;
+          color: white;
+          display: inline-block;
+          width: calc(100% - 60px);
+          border-radius: 6px;
+          cursor: pointer;
+          margin: 12px 12px;
+        }
+
+        &clear{
+          background: #646464;
+          color: #FFF;
+        }
+
+        &container {
+          display: none;
+          width: 100%;
+          position: fixed;
+          bottom: 0;
+        }
+      }
+
+    }
+
+    &list{
+      padding: 10px 24px;
+    }
+
+    &form{
+      height: calc(100% - 124px);
+      overflow: scroll;
+    }
+  }
+
+  &-- {
+    &open {
+      top: 0;
+      & .filter__apply-container{
+        display: flex;
+      }
+    }
+  }
+
+}

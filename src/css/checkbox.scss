@@ -1,0 +1,40 @@
+.checkbox {
+  input {
+    display: none;
+  }
+
+  span {
+    padding-left: 24px;
+    position: relative;
+
+    &:after {
+      content: '';
+      left: 0;
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      border-radius: 4px;
+      border: 2px solid #d3d3d3;
+    }
+  }
+
+  input:checked + span:after{
+    background: rgb(136, 99, 251);
+    border-color: transparent;
+  }
+
+  input:checked + span:before{
+    width: 3px;
+    height: 8px;
+    transform: rotate(40deg);
+    content: '';
+    border: 2px solid #FFFFFF;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    position: absolute;
+    z-index: 1;
+    top: 1px;
+    left: 4px;
+    border-radius: 4px;
+  }
+}

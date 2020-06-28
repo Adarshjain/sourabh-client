@@ -1,0 +1,43 @@
+* {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+body{
+    background-color: #f6eff6;
+}
+
+#root{
+    width: 100vw;
+    height: 100vh;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-dr {
+    flex-direction: row;
+}
+
+.flex-dc {
+    flex-direction: column;
+}
+
+.f-1 {
+    flex: 1;
+}
+
+.jc-sb {
+    justify-content: space-between;
+}
+
+.aic {
+    align-items: center;
+}
+
+.none {
+    display: none;
+}
+
+.eva-hover{
+    display: inline-flex !important;
+}

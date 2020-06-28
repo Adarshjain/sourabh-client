@@ -1,0 +1,95 @@
+type CategoryOne {
+    id: ID!
+    name: String!
+    imageUrl: String
+    orderOfDisplay: Int
+}
+
+type CategoryTwo {
+    id: ID!
+    name: String!
+    imageUrl: String
+    orderOfDisplay: Int
+    categoryOne: CategoryOne!
+}
+
+type Filter {
+    categoriesOne: [CategoryOne]!
+    categoriesTwo: [CategoryTwo]!
+    price: [Float]
+    weight: [String]
+    purity: [String]
+    gender: [String]
+    size: [String]
+}
+
+type Mutation {
+    updateCategoryOne(
+        id: ID
+        name: String!
+        image: String
+        orderOfDisplay: Int
+    ): CategoryOne!
+    deleteCategoryOne(id: ID!): Boolean
+    updateCategoryTwo(
+        id: ID
+        name: String!
+        image: String
+        orderOfDisplay: Int
+        categoryOne: ID!
+    ): CategoryTwo!
+    deleteCategoryTwo(id: ID!): Boolean
+    updateProduct(
+        id: ID
+        name: String!
+        description: String
+        categoryOne: ID!
+        categoryTwo: ID!
+        price: Float
+        favorite: Boolean
+        images: [String]
+        weight: String
+        purity: String
+        gender: String
+        size: String
+        isOnDiscount: Boolean
+        isHallmark: Boolean
+        isHidden: Boolean
+    ): Product!
+    deleteProduct(id: ID!): Boolean
+}
+
+type Product {
+    id: ID!
+    name: String
+    description: String
+    categoryOne: CategoryOne!
+    categoryTwo: CategoryTwo!
+    price: Float
+    favorite: Boolean
+    weight: String
+    purity: String
+    gender: String
+    size: String
+    isOnDiscount: Boolean
+    isHallmark: Boolean
+    isHidden: Boolean
+    images: [String]
+}
+
+type Query {
+    categoriesOne(categoryOneId: ID): [CategoryOne]!
+    categoriesTwo(categoryTwoId: ID): [CategoryTwo]!
+    allProducts(productId: ID): [Product]!
+    filters: Filter!
+    filterProduct(
+        categoryOne: [ID]
+        categoryTwo: [ID]
+        price: [Float]
+        weight: [String]
+        purity: [String]
+        gender: [String]
+        size: [String]
+        isHallmark: Boolean
+    ): [Product]!
+}

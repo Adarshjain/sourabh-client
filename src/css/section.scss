@@ -1,0 +1,44 @@
+.section {
+    width: 100%;
+    padding: 40px;
+    position: relative;
+}
+
+.section:after {
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    background-color: rgb(236, 236, 248);
+}
+
+.section__header {
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 24px;
+}
+
+.gender {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    cursor: pointer;
+    margin: 0 18px;
+}
+
+.gender__icon {
+    width: 100px;
+    height: 100px;
+    transition: all 0.2s ease-in-out;
+}
+
+.gender:hover .gender__icon {
+    transform: scale(1.2);
+}
+
+.gender__name {
+    font-size: 20px;
+    margin: 12px;
+    color: rgb(0, 0, 30);
+}
