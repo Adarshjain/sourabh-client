@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && echo '/graphql/*    http://lancincatalog.me/graphql/:splat 200!' >> build/_redirects",
+    "build": "react-scripts build && cp public/_redirects build/_redirects",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "gql": "gql-gen",
