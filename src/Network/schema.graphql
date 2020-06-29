@@ -21,6 +21,7 @@ type Filter {
     purity: [String]
     gender: [String]
     size: [String]
+    booleans: [String]
 }
 
 type Mutation {
@@ -83,8 +84,9 @@ type Query {
     allProducts(productId: ID): [Product]!
     filters: Filter!
     filterProduct(
-        categoryOne: [ID]
-        categoryTwo: [ID]
+        id:[ID]
+        categoriesOne: [ID]
+        categoriesTwo: [ID]
         price: [Float]
         weight: [String]
         purity: [String]
@@ -93,3 +95,4 @@ type Query {
         isHallmark: Boolean
     ): [Product]!
 }
+

@@ -14,7 +14,7 @@ export default function SimilarProducts({categoryId}: { categoryId: string }) {
         if (data !== undefined) {
             fetchProducts({
                 variables: {
-                    categoryTwo: [data.categoriesTwo[0].id]
+                    categoriesTwo: [data.categoriesTwo[0].id]
                 }
             })
         }

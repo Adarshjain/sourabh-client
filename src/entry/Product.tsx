@@ -88,8 +88,8 @@ const Product = function () {
                 </div>
                 <SimilarCategoryTwo categoryId={product.categoryTwo.id}/>
                 <SimilarProducts categoryId={product.categoryTwo.id}/>
-
             </Page>
+            <div style={{height: "50px", width: "1px"}}/>
         </>
     }
 }

@@ -34,6 +34,7 @@ export type Filter = {
   purity?: Maybe<Array<Maybe<Scalars['String']>>>;
   gender?: Maybe<Array<Maybe<Scalars['String']>>>;
   size?: Maybe<Array<Maybe<Scalars['String']>>>;
+  booleans?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
 export type Mutation = {
@@ -142,8 +143,9 @@ export type QueryAllProductsArgs = {
 
 
 export type QueryFilterProductArgs = {
-  categoryOne?: Maybe<Array<Maybe<Scalars['ID']>>>;
-  categoryTwo?: Maybe<Array<Maybe<Scalars['ID']>>>;
+  id?: Maybe<Array<Maybe<Scalars['ID']>>>;
+  categoriesOne?: Maybe<Array<Maybe<Scalars['ID']>>>;
+  categoriesTwo?: Maybe<Array<Maybe<Scalars['ID']>>>;
   price?: Maybe<Array<Maybe<Scalars['Float']>>>;
   weight?: Maybe<Array<Maybe<Scalars['String']>>>;
   purity?: Maybe<Array<Maybe<Scalars['String']>>>;

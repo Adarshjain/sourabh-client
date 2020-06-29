@@ -85,6 +85,7 @@ export const VALID_FILTERS = gql`
 
 export const FILTER_PRODUCTS = gql`
     query filterProduct(
+        $id:[ID]
         $categoriesOne: [ID]
         $categoriesTwo: [ID]
         $price: [Float]
@@ -95,6 +96,7 @@ export const FILTER_PRODUCTS = gql`
         $isHallmark: Boolean
     ){
         filterProduct(
+            id:$id
             categoriesOne:$categoriesOne
             categoriesTwo:$categoriesTwo
             price:$price

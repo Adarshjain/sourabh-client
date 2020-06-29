@@ -1,6 +1,4 @@
 import React from 'react';
-// import Gender from "../comps/Gender";
-// import ProductList from "../comps/ProductList";
 import Page from "../comps/PageContainer";
 import Nav from "../comps/Nav";
 import Gender from "../comps/IndexPage/Gender";
@@ -12,7 +10,7 @@ const IndexPage = () => {
             <Nav/>
             <Page>
                 <Gender/>
-                <ProductList/>
+                <ProductList ids={['112','113']}/>
             </Page>
         </>
     );

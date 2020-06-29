@@ -23,7 +23,7 @@ const Products = () => {
             let filterObj: QueryFilterProductArgs;
             if (search !== "") {
                 const c2id = search.split('=')[1];
-                filterObj = {categoryTwo: [c2id]}
+                filterObj = {categoriesTwo: [c2id]}
             } else {
                 filterObj = {};
             }

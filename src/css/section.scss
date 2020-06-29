@@ -1,6 +1,6 @@
 .section {
     width: 100%;
-    padding: 40px;
+    padding-top: 40px;
     position: relative;
 }
 
@@ -13,7 +13,7 @@
 
 .section__header {
     text-align: center;
-    font-size: 50px;
+    font-size: 32px;
     margin-bottom: 24px;
 }
 
@@ -22,14 +22,13 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 20px;
+    padding: 8px;
     cursor: pointer;
-    margin: 0 18px;
 }
 
 .gender__icon {
-    width: 100px;
-    height: 100px;
+    width: 48px;
+    height: 48px;
     transition: all 0.2s ease-in-out;
 }
 
@@ -38,7 +37,7 @@
 }
 
 .gender__name {
-    font-size: 20px;
+    font-size: 14px;
     margin: 12px;
     color: rgb(0, 0, 30);
 }

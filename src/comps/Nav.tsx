@@ -28,7 +28,7 @@ function MobileNav({items}: { items?: CategoryTwo[] }) {
     return (
         <motion.div className={'nav ' + (isOpen ? 'nav--open' : '')}>
             <div className='flex flex-dr jc-sb nav__header'>
-                <div>Sourabh<br/>Jewellers</div>
+                <a href='/'>Sourabh<br/>Jewellers</a>
                 <MenuToggle isOpen={isOpen} toggle={() => toggleOpen()}/>
             </div>
             <div className='nav__items'>
@@ -54,9 +54,9 @@ function FullNav() {
         <div className='flex flex-dr jc-sb nav'
              style={isFull ? variants.full : variants.small}
         >
-            <div>
+            <a href='/'>
                 Sourabh Jewellers
-            </div>
+            </a>
             <div>
                 <a href="">Home</a>
                 <a href="">Shop</a>

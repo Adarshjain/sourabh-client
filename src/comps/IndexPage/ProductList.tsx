@@ -1,38 +1,26 @@
 import React from 'react';
 import Section from "./section";
-import {Product} from "../../gql/types";
-import ImageCard from "../ImageCard";
-// import '../css/pro';
+import {useQuery} from "@apollo/react-hooks";
+import {Product, QueryFilterProductArgs} from "../../gql/types";
+import {FILTER_PRODUCTS} from "../../Network/schemaFormats";
+import Loading from "../Loading";
+import ProductItem from "../ProductItem";
 
+export default function ProductList({ids}: { ids: string[] }) {
+    const {loading, data} = useQuery<{ filterProduct: Product[] }, QueryFilterProductArgs>(FILTER_PRODUCTS, {variables: {id: ids}});
 
-interface ProductList {
-    title?: string,
-    products: Product
-}
-
-export default function ProductList() {
-    const productMap = [
-        {
-            title: "Earringin",
-            src: 'https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/R/JR03162-WGP9RH_11_listfront.jpg',
-            href: ''
-        },
-        {
-            title: "Earringin2",
-            src: 'https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/T/JT00492-YGP9EB_11_listfront.jpg',
-            href: ''
-        },
-        {
-            title: "Earringin3",
-            src: 'https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/T/JT00920-1RP900_11_listfront.jpg',
-            href: ''
-        }
-    ]
-    return (
-        <Section header="Featured Products">
-            {
-                productMap.map(product => <ImageCard key={product.title} href={product.href} style={{margin: '24px'}} src={product.src}/>)
-            }
-        </Section>
-    );
+    if (loading) {
+        return <Loading/>
+    }
+    if (data !== undefined && data.filterProduct.length > 0) {
+        return (
+            <Section header="Featured Products">
+                {
+                    data.filterProduct.map(product => <ProductItem {...product} />)
+                }
+            </Section>
+        );
+    } else {
+        return <></>
+    }
 };

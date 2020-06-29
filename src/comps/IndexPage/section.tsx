@@ -2,6 +2,7 @@ import React from 'react';
 
 interface Section {
     header?: string | Element[],
+    direction?: string,
     children?: any
 }
 
@@ -11,7 +12,7 @@ export default function Section(props: Section) {
             <div className='section__header'>
                 {props.header}
             </div>
-            <div className='flex'>
+            <div className={'flex ' + (props.direction === "column" ? "flex-dc" : "")}>
                 {props.children}
             </div>
         </div>
