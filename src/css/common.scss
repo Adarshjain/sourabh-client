@@ -38,6 +38,12 @@ body{
     display: none;
 }
 
-.eva-hover{
+.eva-hover {
     display: inline-flex !important;
+}
+
+.cent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

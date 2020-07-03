@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import Section from "./section";
 import '../../css/section.scss';
 import {useQuery} from "@apollo/react-hooks";
@@ -21,13 +21,13 @@ export default function Gender() {
     } else {
         if (data !== undefined && data.filters.gender && data.filters.gender.length > 0) {
             return (
-                <Section header="Search By Gender">
+                <Section header="Shop By Gender">
                     {
                         data.filters.gender.filter(g => genderMap.hasOwnProperty(g || ""))
                             .map(gender => <div className='gender' key={gender}>
-                            <img className='gender__icon' src={genderMap[gender || ""]} alt={gender}/>
-                            <div className='gender__name'>{gender}</div>
-                        </div>)
+                                <img className='gender__icon' src={genderMap[gender || ""]} alt={gender}/>
+                                <div className='gender__name'>{gender}</div>
+                            </div>)
                     }
                 </Section>
             );

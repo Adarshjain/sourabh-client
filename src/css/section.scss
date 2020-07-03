@@ -13,8 +13,9 @@
 
 .section__header {
     text-align: center;
-    font-size: 32px;
+    font-size: 24px;
     margin-bottom: 24px;
+    font-weight: 500;
 }
 
 .gender {
@@ -40,4 +41,8 @@
     font-size: 14px;
     margin: 12px;
     color: rgb(0, 0, 30);
+}
+
+.banner__img {
+    min-width: 100vw;
 }

@@ -1,14 +1,23 @@
-.awssld {
-  margin-bottom: 22px;
+.slider__dots {
+  display: flex;
+  flex-direction: row;
+  padding: 8px;
+  justify-content: center;
+  height: 12px;
+  align-items: center;
 }
 
-.awssld__bullets {
-  bottom: -18px;
-  pointer-events: none;
-}
-
-.awssld__bullets button {
+.slider__dot {
+  width: 24px;
+  height: 4px;
   border-radius: 4px;
-  width: 14px;
-  height: 3px;
+  background-color: #646464;
+  margin: 6px;
+  transition: all ease-in-out 0.2s;
+}
+
+.slider__dot--active {
+  height: 6px;
+  width: 28px;
+  margin: 4px;
 }

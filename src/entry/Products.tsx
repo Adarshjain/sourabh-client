@@ -1,21 +1,26 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {useLazyQuery} from '@apollo/react-hooks';
 import {FILTER_PRODUCTS} from '../Network/schemaFormats';
 import Nav from "../comps/Nav";
 import Page from "../comps/PageContainer";
 import {Product, QueryFilterProductArgs} from "../gql/types";
-import ProductItem from "../comps/ProductItem";
 import '../css/product.scss';
 import Filters from "../comps/ProductListPage/Filters";
 import Loading from "../comps/Loading";
 import {useLocation} from 'react-router-dom';
+import {motion, useAnimation} from 'framer-motion';
+import GridItem from "../comps/ProductListPage/GridItem";
+import FooterContact from "../comps/FooterContant";
+
 
 const Products = () => {
     const [products, updateProducts] = useState<Product[]>([]);
     // const {loading, error, data} = useQuery<{ filterProduct: Product[] }>(FILTER_PRODUCTS);
     const [filterProducts, {loading: loading2, data: data2}] = useLazyQuery<{ filterProduct: Product[] }>(FILTER_PRODUCTS, {fetchPolicy: "network-only"});
     const [isFilterOpen, toggleFilter] = useState<boolean>(false);
+    const controls = useAnimation();
     const [localFilters, setLocalFilters] = useState<QueryFilterProductArgs>({});
+    const originOffset = useRef({top: 0, left: 0});
     const location = useLocation();
     useEffect(() => {
         async function wrapperFn() {
@@ -36,14 +41,11 @@ const Products = () => {
         wrapperFn();
     }, [filterProducts, location]);
     useEffect(() => {
-        // if (data !== undefined) {
-        //     updateProducts(data.filterProduct)
-        // }
-        console.log(data2);
         if (data2 !== undefined) {
             updateProducts(data2.filterProduct)
+            setTimeout(() => controls.start("visible"), 100);
         }
-    }, [data2]);
+    }, [controls, data2]);
 
     // if (error) return <h3>Server under maintenance,  please retry after a couple of minutes</h3>;
 
@@ -61,21 +63,25 @@ const Products = () => {
             <>
                 <Nav/>
                 <Page className='page__products'>
-                    <div className='product__list'>
+                    <motion.div initial="hidden" animate={controls} variants={{}}
+                                className={'product__list ' + (data2 === undefined || products.length === 0 ? 'cent' : '')}>
                         {
                             data2 !== undefined ?
                                 products.length > 0 ? products.map(
                                     (prod, index) => {
-                                        return <a href={'/product?id=' + prod.id}
-                                                  className={'product-container ' + (index === 0 ? 'product-container--full-width' : '')}
-                                                  key={prod.id}>
-                                            <ProductItem {...prod} />
-                                        </a>
+                                        return <GridItem
+                                            key={prod.id}
+                                            i={index}
+                                            originIndex={0}
+                                            delayPerPixel={0.00085}
+                                            originOffset={originOffset}
+                                            prod={prod}
+                                        />
                                     })
-                                    : 'No products match'
-                                : 'No products match'
+                                    : <div>No products match</div>
+                                : <div>No products match</div>
                         }
-                    </div>
+                    </motion.div>
                     <div className='products__filter-cta-container'>
                         <div className='products__filter-cta' onClick={() => toggleFilter(!isFilterOpen)}>Filters</div>
                     </div>
@@ -83,6 +89,7 @@ const Products = () => {
                              onFilterUpdate={updateFilter}
                              onClose={() => toggleFilter(false)}
                              appliedFilters={localFilters}/>
+                    <FooterContact/>
                 </Page>
             </>
         );
@@ -90,3 +97,5 @@ const Products = () => {
 };
 
 export default Products;
+
+

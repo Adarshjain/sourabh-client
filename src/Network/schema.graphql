@@ -84,7 +84,7 @@ type Query {
     allProducts(productId: ID): [Product]!
     filters: Filter!
     filterProduct(
-        id:[ID]
+        productId:[ID]
         categoriesOne: [ID]
         categoriesTwo: [ID]
         price: [Float]

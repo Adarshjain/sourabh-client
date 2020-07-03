@@ -25,7 +25,7 @@ export default function SimilarProducts({categoryId}: { categoryId: string }) {
     } else {
         if (products && products.filterProduct && products.filterProduct.length > 0) {
             return <div className="product__suggestion">
-                <div className="product__suggestion-title">Suggested Products</div>
+                <div className="product__suggestion-title">You may also like</div>
                 <div className="product__suggestion-content">
                     {
                         products.filterProduct.slice(0, 4).map(product => <a href={'/product?id=' + product.id}>

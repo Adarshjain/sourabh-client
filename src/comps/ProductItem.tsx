@@ -1,13 +1,13 @@
 import React from 'react';
 import '../css/product.scss';
 
-const ProductItem = (product: { images?: any, name?: string }) => {
+const ProductItem = ({images, name, claz}: { images?: any, name?: string, claz?: string }) => {
     return (
-        <div className='product-item'>
+        <div className={`product-item ${claz !== undefined ? claz : ''}`}>
             {
-                product.images !== undefined && <img src={product.images[0]} alt="productimage"/>
+                images !== undefined && <img loading='lazy' src={images[0]} alt="productimage"/>
             }
-            <div className='product-item__name'>{product.name}</div>
+            <div className='product-item__name'>{name}</div>
         </div>
     );
 };

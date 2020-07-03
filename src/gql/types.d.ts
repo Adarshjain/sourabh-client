@@ -143,7 +143,7 @@ export type QueryAllProductsArgs = {
 
 
 export type QueryFilterProductArgs = {
-  id?: Maybe<Array<Maybe<Scalars['ID']>>>;
+  productId?: Maybe<Array<Maybe<Scalars['ID']>>>;
   categoriesOne?: Maybe<Array<Maybe<Scalars['ID']>>>;
   categoriesTwo?: Maybe<Array<Maybe<Scalars['ID']>>>;
   price?: Maybe<Array<Maybe<Scalars['Float']>>>;

@@ -17,8 +17,10 @@ export default function SimilarCategoryTwo({categoryId}: { categoryId: string })
                 <div className="product__suggestion-title">Suggested Categories</div>
                 <div className="product__suggestion-content">
                     {
-                        data.categoriesTwo.slice(0, 4).map(categoryTwo => <a href={'/products?c2=' + categoryTwo.id}>
-                            <ProductItem images={[categoryTwo.imageUrl]} name={categoryTwo.name}/></a>)
+                        data.categoriesTwo.slice(0, 4).map(categoryTwo => <a key={categoryTwo.id}
+                                                                             href={'/products?c2=' + categoryTwo.id}>
+                            <ProductItem images={[categoryTwo.imageUrl]} name={categoryTwo.name}/>
+                        </a>)
                     }
                 </div>
             </div>

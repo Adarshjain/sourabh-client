@@ -5,7 +5,7 @@ import {CategoryTwo} from "../../gql/types";
 
 const variants = {
     open: {
-        transition: {staggerChildren: 0.15, delayChildren: 0.1}
+        transition: {staggerChildren: 0.15, delayChildren: 0.06}
     },
     closed: {
         transition: {staggerChildren: 0, staggerDirection: -1}
