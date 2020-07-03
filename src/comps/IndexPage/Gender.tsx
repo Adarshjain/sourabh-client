@@ -9,12 +9,13 @@ import Loading from "../Loading";
 export default function Gender() {
     const {data, loading} = useQuery<{ filters: Filter }>(VALID_FILTERS);
     const genderMap = {
-        "Man": "/assets/images/man.svg",
+        "Men": "/assets/images/man.svg",
         "Women": "/assets/images/woman.svg",
         "Kids": "/assets/images/kid.svg",
         "Couples": "/assets/images/couple.svg",
         "Unisex": "/assets/images/unisex.svg",
     };
+    const keys = Object.keys(genderMap);
 
     if (loading) {
         return <Loading/>
@@ -23,7 +24,9 @@ export default function Gender() {
             return (
                 <Section header="Shop By Gender">
                     {
-                        data.filters.gender.filter(g => genderMap.hasOwnProperty(g || ""))
+                        data.filters.gender
+                            .sort((gA, gB) => keys.indexOf(gA || '') - keys.indexOf(gB || ''))
+                            .filter(g => genderMap.hasOwnProperty(g || ""))
                             .map(gender => <div className='gender' key={gender}>
                                 <img className='gender__icon' src={genderMap[gender || ""]} alt={gender}/>
                                 <div className='gender__name'>{gender}</div>
