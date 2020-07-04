@@ -61,6 +61,8 @@ export const FETCH_PRODUCTS = gql`
             isHallmark
             isHidden
             images
+            isFeatured
+            isTrending
         }
     }
 `;
@@ -95,6 +97,8 @@ export const FILTER_PRODUCTS = gql`
         $gender: [String]
         $size: [String]
         $isHallmark: Boolean
+        $isFeatured: Boolean
+        $isTrending: Boolean
     ){
         filterProduct(
             productId:$productId
@@ -106,6 +110,8 @@ export const FILTER_PRODUCTS = gql`
             gender:$gender
             size:$size
             isHallmark:$isHallmark
+            isFeatured:$isFeatured
+            isTrending:$isTrending
         ){
             id
             name
@@ -138,6 +144,8 @@ export const FILTER_PRODUCTS = gql`
             isHallmark
             isHidden
             images
+            isFeatured
+            isTrending
         }
     }
 `;

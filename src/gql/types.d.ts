@@ -115,6 +115,8 @@ export type Product = {
   isHallmark?: Maybe<Scalars['Boolean']>;
   isHidden?: Maybe<Scalars['Boolean']>;
   images?: Maybe<Array<Maybe<Scalars['String']>>>;
+  isFeatured?: Maybe<Scalars['Boolean']>;
+  isTrending?: Maybe<Scalars['Boolean']>;
 };
 
 export type Query = {
@@ -152,5 +154,7 @@ export type QueryFilterProductArgs = {
   gender?: Maybe<Array<Maybe<Scalars['String']>>>;
   size?: Maybe<Array<Maybe<Scalars['String']>>>;
   isHallmark?: Maybe<Scalars['Boolean']>;
+  isFeatured?: Maybe<Scalars['Boolean']>;
+  isTrending?: Maybe<Scalars['Boolean']>;
 };
 

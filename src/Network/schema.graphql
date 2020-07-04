@@ -76,6 +76,8 @@ type Product {
     isHallmark: Boolean
     isHidden: Boolean
     images: [String]
+    isFeatured:Boolean
+    isTrending: Boolean
 }
 
 type Query {
@@ -93,6 +95,8 @@ type Query {
         gender: [String]
         size: [String]
         isHallmark: Boolean
+        isFeatured: Boolean
+        isTrending: Boolean
     ): [Product]!
 }
 
