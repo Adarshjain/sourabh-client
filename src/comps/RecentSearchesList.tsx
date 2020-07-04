@@ -3,6 +3,7 @@ import {useLazyQuery} from "@apollo/react-hooks";
 import {Product} from "../gql/types";
 import {FILTER_PRODUCTS} from "../Network/schemaFormats";
 import ProductItem from "./ProductItem";
+import {Link} from "react-router-dom";
 
 export default function RecentSearchesList() {
     const [value] = React.useState<{ products?: string[] }>(
@@ -28,9 +29,9 @@ export default function RecentSearchesList() {
                 data.filterProduct
                     .slice(0, 5)
                     .sort((prodA, prodB) => (value.products?.indexOf('' + prodA.id) || -1) - (value.products?.indexOf('' + prodB.id) || -1))
-                    .map(product => <a key={product.id} href={'/product?id=' + product.id}>
+                    .map(product => <Link key={product.id} to={'/product?id=' + product.id}>
                         <ProductItem claz='' images={product.images} name={product.name}/>
-                    </a>)
+                    </Link>)
             }
         </>
     } else {

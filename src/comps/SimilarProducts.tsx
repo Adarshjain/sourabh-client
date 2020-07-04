@@ -4,6 +4,7 @@ import {useLazyQuery, useQuery} from "@apollo/react-hooks";
 import {FETCH_SECOND_CATEGORIES, FILTER_PRODUCTS} from "../Network/schemaFormats";
 import {CategoryTwo, Product, QueryFilterProductArgs} from "../gql/types";
 import Loading from "./Loading";
+import {Link} from "react-router-dom";
 
 export default function SimilarProducts({categoryId}: { categoryId: string }) {
 
@@ -28,8 +29,8 @@ export default function SimilarProducts({categoryId}: { categoryId: string }) {
                 <div className="product__suggestion-title">You may also like</div>
                 <div className="product__suggestion-content">
                     {
-                        products.filterProduct.slice(0, 4).map(product => <a key={product.id} href={'/product?id=' + product.id}>
-                            <ProductItem images={product.images} name={product.name}/></a>)
+                        products.filterProduct.slice(0, 4).map(product => <Link key={product.id} to={'/product?id=' + product.id}>
+                            <ProductItem images={product.images} name={product.name}/></Link>)
                     }
                 </div>
             </div>

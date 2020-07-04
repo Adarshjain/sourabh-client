@@ -12,16 +12,16 @@ export default function FooterContact() {
         <div className='flex flex-dr footer-contact__social'>
             {/*<div>Follow us on</div>*/}
             {/*<div className='flex flex-dr'>*/}
-            <a href="#" rel="noopener noreferrer"
+            <a href="https://www.facebook.com" rel="noopener noreferrer"
                target="_blank" className="footer-contact__social-item">
                 <img className="footer-contact__social-image" alt="fb"
                      src="https://img.icons8.com/ios/48/000000/facebook-new.png"/>
             </a>
-            <a className="footer-contact__social-item" href="#" rel="noopener noreferrer" target="_blank">
+            <a className="footer-contact__social-item" href="https://www.twitter.com" rel="noopener noreferrer" target="_blank">
                 <img className="footer-contact__social-image" alt="twitter"
                      src="https://img.icons8.com/ios/48/000000/twitter.png"/>
             </a>
-            <a className="footer-contact__social-item" href="#" rel="noopener noreferrer" target="_blank">
+            <a className="footer-contact__social-item" href="https://www.whatsapp.com" rel="noopener noreferrer" target="_blank">
                 <img className="footer-contact__social-image" alt="whatsapp"
                      src="https://img.icons8.com/ios/48/000000/whatsapp.png"/>
             </a>

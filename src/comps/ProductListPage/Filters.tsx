@@ -88,7 +88,7 @@ export default function Filters({isOpen, onFilterUpdate, onClose, appliedFilters
                 {
                     data !== undefined
                     && Object.keys(data.filters)
-                        .filter(key => filterNames[key] !== undefined)
+                        .filter(key => filterNames[key] !== undefined &&  data.filters[key].length > 0)
                         .map(key => <FilterAccordion title={filterNames[key].name} key={filterNames[key].name}>
                             {data.filters[key].map(val => {
                                 let displayValue = "";

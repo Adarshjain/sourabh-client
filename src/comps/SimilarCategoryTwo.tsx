@@ -4,6 +4,7 @@ import {useQuery} from "@apollo/react-hooks";
 import {FETCH_SECOND_CATEGORIES} from "../Network/schemaFormats";
 import {CategoryTwo} from "../gql/types";
 import Loading from "./Loading";
+import {Link} from "react-router-dom";
 
 export default function SimilarCategoryTwo({categoryId}: { categoryId: string }) {
 
@@ -17,10 +18,10 @@ export default function SimilarCategoryTwo({categoryId}: { categoryId: string })
                 <div className="product__suggestion-title">Suggested Categories</div>
                 <div className="product__suggestion-content">
                     {
-                        data.categoriesTwo.slice(0, 4).map(categoryTwo => <a key={categoryTwo.id}
-                                                                             href={'/products?c2=' + categoryTwo.id}>
+                        data.categoriesTwo.slice(0, 4).map(categoryTwo => <Link key={categoryTwo.id}
+                                                                             to={'/products?c2=' + categoryTwo.id}>
                             <ProductItem images={[categoryTwo.imageUrl]} name={categoryTwo.name}/>
-                        </a>)
+                        </Link>)
                     }
                 </div>
             </div>

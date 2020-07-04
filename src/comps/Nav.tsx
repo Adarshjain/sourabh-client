@@ -9,6 +9,7 @@ import {FETCH_SECOND_CATEGORIES} from "../Network/schemaFormats";
 import {useQuery} from "@apollo/react-hooks";
 import Loading from "./Loading";
 import {useHistory} from "react-router";
+import {Link} from "react-router-dom";
 
 export default function Nav() {
     const {data, loading} = useQuery<{ categoriesTwo: CategoryTwo[] }>(FETCH_SECOND_CATEGORIES);
@@ -39,7 +40,7 @@ function MobileNav({items}: { items?: CategoryTwo[] }) {
     return (
         <motion.div className={'nav ' + (isOpen ? 'nav--open' : '')}>
             <div className='flex flex-dr jc-sb nav__header'>
-                <a href='/'>Sourabh<br/>Jewellers</a>
+                <Link to='/'>Sourabh<br/>Jewellers</Link>
                 <MenuToggle isOpen={isOpen} toggle={() => toggleOpen()}/>
             </div>
             <div className='nav__items'>
@@ -65,9 +66,9 @@ function FullNav() {
         <div className='flex flex-dr jc-sb nav'
              style={isFull ? variants.full : variants.small}
         >
-            <a href='/'>
+            <Link to='/'>
                 Sourabh Jewellers
-            </a>
+            </Link>
             <div>
                 <a href="">Home</a>
                 <a href="">Shop</a>
