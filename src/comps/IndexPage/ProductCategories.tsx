@@ -13,7 +13,7 @@ export default function ProductCategories() {
         return <Section header="Shop By Categories">
             <div className='index__categories-holder'>
                 {
-                    data.categoriesTwo.slice(0, 12).map(cat2 => <a href={`/products?c2=${cat2.id}`}>
+                    data.categoriesTwo.slice(0, 12).map(cat2 => <a key={cat2.id} href={`/products?c2=${cat2.id}`}>
                         <div className='index__categories'>
                             <img src={cat2.imageUrl} alt="Category Image" className='index__categories-img'/>
                             <div className='index__categories-title'>{cat2.name}</div>

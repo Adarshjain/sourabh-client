@@ -11,9 +11,9 @@ export default function Gender() {
     const genderMap = {
         "Men": "/assets/images/man.svg",
         "Women": "/assets/images/woman.svg",
-        "Kids": "/assets/images/kid.svg",
-        "Couples": "/assets/images/couple.svg",
         "Unisex": "/assets/images/unisex.svg",
+        "Kids": "/assets/images/kid.svg",
+        "Couples": "/assets/images/couple.svg"
     };
     const keys = Object.keys(genderMap);
 

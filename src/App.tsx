@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {lazy, Suspense} from 'react';
 import client from "./Network/Apollo/client";
 import {ApolloProvider} from '@apollo/react-hooks';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
@@ -7,23 +7,28 @@ import './css/common.scss';
 import './css/reset.css';
 import './css/checkbox.scss';
 
-import IndexPage from "./entry/IndexPage";
-import Products from "./entry/Products";
-import Product from "./entry/Product";
-
 function App() {
+    const IndexPage = lazy(() => import('./entry/IndexPage'));
+    const Products = lazy(() => import('./entry/Products'));
+    const Product = lazy(() => import('./entry/Product'));
     return (
         <ApolloProvider client={client}>
             <Router>
                 <Switch>
                     <Route exact path="/">
-                        <IndexPage/>
+                        <Suspense fallback={<div/>}>
+                            <IndexPage/>
+                        </Suspense>
                     </Route>
                     <Route path="/products">
-                        <Products/>
+                        <Suspense fallback={<div/>}>
+                            <Products/>
+                        </Suspense>
                     </Route>
                     <Route path="/product">
-                        <Product/>
+                        <Suspense fallback={<div/>}>
+                            <Product/>
+                        </Suspense>
                     </Route>
                 </Switch>
             </Router>

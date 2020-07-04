@@ -23,8 +23,8 @@ export const MenuItem = ({item, items, idx, onItemClick}: { item: CategoryTwo, i
     return (
         <motion.div
             variants={variants}
-            whileHover={{scale: 1.1}}
-            whileTap={{scale: 0.95}}
+            // whileHover={{scale: 1.1}}
+            // whileTap={{scale: 0.95}}
             className='nav__item'
             onClick={() => onItemClick('/products?c2=' + item.id)}
         >

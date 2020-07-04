@@ -30,7 +30,7 @@ export default function Slider(props) {
         </Carousel>
         <div className='slider__dots'>
             {
-                props.children.map((c, i) => <span onClick={e => setValue(i)}
+                props.children.map((c, i) => <span key={i} onClick={_ => setValue(i)}
                                                    className={`slider__dot ${i === value % props.children.length ? 'slider__dot--active' : ''}`}/>)
             }
         </div>

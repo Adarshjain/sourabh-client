@@ -28,7 +28,7 @@ export default function SimilarProducts({categoryId}: { categoryId: string }) {
                 <div className="product__suggestion-title">You may also like</div>
                 <div className="product__suggestion-content">
                     {
-                        products.filterProduct.slice(0, 4).map(product => <a href={'/product?id=' + product.id}>
+                        products.filterProduct.slice(0, 4).map(product => <a key={product.id} href={'/product?id=' + product.id}>
                             <ProductItem images={product.images} name={product.name}/></a>)
                     }
                 </div>

@@ -19,6 +19,17 @@ export default function Nav() {
 function MobileNav({items}: { items?: CategoryTwo[] }) {
     const [isOpen, toggleOpen] = useCycle(false, true);
     const history = useHistory();
+    useEffect(() => {
+        if (isOpen) {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            })
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'initial';
+        }
+    }, [isOpen]);
 
     function handleNav(path) {
         history.push(path);
