@@ -149,3 +149,11 @@ export const FILTER_PRODUCTS = gql`
         }
     }
 `;
+
+export const FETCH_MISC = gql`
+    query findMisc($key:[ID]!){
+        findMisc(key: $key){
+            value
+        }
+    }
+`;

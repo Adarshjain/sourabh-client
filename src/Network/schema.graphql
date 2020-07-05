@@ -24,24 +24,8 @@ type Filter {
     booleans: [String]
 }
 
-type Product {
-    id: ID!
-    name: String
-    description: String
-    categoryOne: CategoryOne!
-    categoryTwo: CategoryTwo!
-    price: Float
-    favorite: Boolean
-    weight: String
-    purity: String
-    gender: String
-    size: String
-    isOnDiscount: Boolean
-    isHallmark: Boolean
-    isHidden: Boolean
-    images: [String]
-    isFeatured:Boolean
-    isTrending: Boolean
+type Misc {
+    value: String
 }
 
 type Mutation {
@@ -76,12 +60,31 @@ type Mutation {
         isOnDiscount: Boolean
         isHallmark: Boolean
         isHidden: Boolean
+        isFeatured: Boolean
+        isTrending: Boolean
     ): Product!
     deleteProduct(id: ID!): Boolean
-    updateMisc(
-        id: [String]
-        value: String
-    ):Misc
+    updateMisc(key: String!, value: String!): Misc
+}
+
+type Product {
+    id: ID!
+    name: String
+    description: String
+    categoryOne: CategoryOne!
+    categoryTwo: CategoryTwo!
+    price: Float
+    favorite: Boolean
+    weight: String
+    purity: String
+    gender: String
+    size: String
+    isOnDiscount: Boolean
+    isHallmark: Boolean
+    isHidden: Boolean
+    images: [String]
+    isFeatured:Boolean
+    isTrending: Boolean
 }
 
 type Query {
@@ -102,9 +105,5 @@ type Query {
         isFeatured: Boolean
         isTrending: Boolean
     ): [Product]!
-    misc(id:[String]): Misc
-}
-
-type Misc{
-    value: String
+    findMisc(key: [ID]!): Misc
 }

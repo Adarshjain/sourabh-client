@@ -37,6 +37,11 @@ export type Filter = {
   booleans?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
+export type Misc = {
+  __typename?: 'Misc';
+  value?: Maybe<Scalars['String']>;
+};
+
 export type Mutation = {
   __typename?: 'Mutation';
   updateCategoryOne: CategoryOne;
@@ -45,6 +50,7 @@ export type Mutation = {
   deleteCategoryTwo?: Maybe<Scalars['Boolean']>;
   updateProduct: Product;
   deleteProduct?: Maybe<Scalars['Boolean']>;
+  updateMisc?: Maybe<Misc>;
 };
 
 
@@ -91,11 +97,19 @@ export type MutationUpdateProductArgs = {
   isOnDiscount?: Maybe<Scalars['Boolean']>;
   isHallmark?: Maybe<Scalars['Boolean']>;
   isHidden?: Maybe<Scalars['Boolean']>;
+  isFeatured?: Maybe<Scalars['Boolean']>;
+  isTrending?: Maybe<Scalars['Boolean']>;
 };
 
 
 export type MutationDeleteProductArgs = {
   id: Scalars['ID'];
+};
+
+
+export type MutationUpdateMiscArgs = {
+  key: Scalars['String'];
+  value: Scalars['String'];
 };
 
 export type Product = {
@@ -126,6 +140,7 @@ export type Query = {
   allProducts: Array<Maybe<Product>>;
   filters: Filter;
   filterProduct: Array<Maybe<Product>>;
+  findMisc?: Maybe<Misc>;
 };
 
 
@@ -156,5 +171,10 @@ export type QueryFilterProductArgs = {
   isHallmark?: Maybe<Scalars['Boolean']>;
   isFeatured?: Maybe<Scalars['Boolean']>;
   isTrending?: Maybe<Scalars['Boolean']>;
+};
+
+
+export type QueryFindMiscArgs = {
+  key: Array<Maybe<Scalars['ID']>>;
 };
 

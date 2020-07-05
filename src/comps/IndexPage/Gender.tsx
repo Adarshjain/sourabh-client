@@ -5,6 +5,7 @@ import {useQuery} from "@apollo/react-hooks";
 import {Filter} from "../../gql/types";
 import {VALID_FILTERS} from "../../Network/schemaFormats";
 import Loading from "../Loading";
+import {Link} from "react-router-dom";
 
 export default function Gender() {
     const {data, loading} = useQuery<{ filters: Filter }>(VALID_FILTERS);
@@ -27,10 +28,10 @@ export default function Gender() {
                         data.filters.gender
                             .sort((gA, gB) => keys.indexOf(gA || '') - keys.indexOf(gB || ''))
                             .filter(g => genderMap.hasOwnProperty(g || ""))
-                            .map(gender => <div className='gender' key={gender}>
+                            .map(gender => <Link to={'/products?gender=' + gender} className='gender' key={gender}>
                                 <img className='gender__icon' src={genderMap[gender || ""]} alt={gender}/>
                                 <div className='gender__name'>{gender}</div>
-                            </div>)
+                            </Link>)
                     }
                 </Section>
             );

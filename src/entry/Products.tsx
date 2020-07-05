@@ -12,6 +12,16 @@ import {motion, useAnimation} from 'framer-motion';
 import GridItem from "../comps/ProductListPage/GridItem";
 import FooterContact from "../comps/FooterContant";
 
+function getJsonFromUrl(url?:string) {
+    if(!url) url = window.location.search;
+    let query = url.substr(1);
+    let result = {};
+    query.split("&").forEach(function(part) {
+        let item = part.split("=");
+        result[item[0]] = decodeURIComponent(item[1]);
+    });
+    return result;
+}
 
 const Products = () => {
     const [products, updateProducts] = useState<Product[]>([]);
@@ -24,11 +34,17 @@ const Products = () => {
     const location = useLocation();
     useEffect(() => {
         async function wrapperFn() {
-            const search = location.search//.slice(1)
+            const search = location.search;
             let filterObj: QueryFilterProductArgs;
             if (search !== "") {
-                const c2id = search.split('=')[1];
-                filterObj = {categoriesTwo: [c2id]}
+                const params:any = getJsonFromUrl();
+                if(params.hasOwnProperty('gender')){
+                    filterObj = {gender: [params.gender]}
+                } else if(params.hasOwnProperty('c2')) {
+                    filterObj = {categoriesTwo: [params.c2]}
+                }else{
+                    filterObj = {};
+                }
             } else {
                 filterObj = {};
             }
