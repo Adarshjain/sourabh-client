@@ -79,6 +79,10 @@ const Products = () => {
             <>
                 <Nav/>
                 <Page className='page__products'>
+                        {
+                            (data2 !== undefined &&
+                                products.length > 0) && <div className='product__count'>We found {products.length} products for you</div>
+                        }
                     <motion.div initial="hidden" animate={controls} variants={{}}
                                 className={'product__list ' + (data2 === undefined || products.length === 0 ? 'cent' : '')}>
                         {

@@ -1,6 +1,7 @@
 import React, {useEffect, useLayoutEffect, useRef} from "react";
 import {motion} from "framer-motion";
 import ProductItem from "../ProductItem";
+import {Link} from "react-router-dom";
 
 const itemVariants = {
     hidden: {
@@ -43,13 +44,13 @@ export default function GridItem({delayPerPixel, i, originIndex, originOffset, p
         delayRef.current = d * delayPerPixel;
     }, [delayPerPixel, originOffset]);
 
-    return <motion.a href={'/product?id=' + prod.id}
-                     className='product-container'
-                     key={prod.id}
-                     ref={ref}
-                     variants={itemVariants} custom={delayRef}
+    return <motion.div className='product-container'
+                       ref={ref}
+                       variants={itemVariants} custom={delayRef}
     >
-        <ProductItem {...prod} />
-    </motion.a>
+        <Link to={'/product?id=' + prod.id}>
+            <ProductItem {...prod} />
+        </Link>
+    </motion.div>
     //+ (i === 0 ? 'product-container--full-width' : '')
 }
