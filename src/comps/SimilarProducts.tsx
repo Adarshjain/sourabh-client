@@ -30,7 +30,7 @@ export default function SimilarProducts({categoryId}: { categoryId: string }) {
                 <div className="product__suggestion-content">
                     {
                         products.filterProduct.slice(0, 4).map(product => <Link key={product.id} to={'/product?id=' + product.id}>
-                            <ProductItem images={product.images} name={product.name}/></Link>)
+                            <ProductItem images={product.images} name={product.name} isHallmark={product.isHallmark}/></Link>)
                     }
                 </div>
             </div>

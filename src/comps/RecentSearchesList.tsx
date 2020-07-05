@@ -30,7 +30,7 @@ export default function RecentSearchesList() {
                     .slice(0, 5)
                     .sort((prodA, prodB) => (value.products?.indexOf('' + prodA.id) || -1) - (value.products?.indexOf('' + prodB.id) || -1))
                     .map(product => <Link key={product.id} to={'/product?id=' + product.id}>
-                        <ProductItem claz='' images={product.images} name={product.name}/>
+                        <ProductItem claz='' images={product.images} name={product.name} isHallmark={product.isHallmark}/>
                     </Link>)
             }
         </>
