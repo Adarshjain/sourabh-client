@@ -1,14 +1,12 @@
 import React, {useState} from 'react';
 import Carousel from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
+import '../../css/slider.scss';
 
 export default function Slider(props) {
     const [value, setValue] = useState<number>(0);
     return <>
         <Carousel
-            arrows
-            // autoPlay={2000}
-            // animationSpeed={1000}
             value={value}
             infinite
             slidesPerScroll={1}
@@ -16,12 +14,8 @@ export default function Slider(props) {
             keepDirectionWhenDragging
             onChange={e => setValue(e || 0)}
             breakpoints={{
-                640: {
+                0: {
                     slidesPerPage: 1,
-                    arrows: false
-                },
-                900: {
-                    slidesPerPage: 2,
                     arrows: false
                 }
             }}

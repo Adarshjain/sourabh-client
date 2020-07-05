@@ -42,3 +42,20 @@
 .banner__img {
     min-width: 100vw;
 }
+
+@media only screen and (min-width: 640px) {
+    .section__header {
+        font-size: 32px;
+    }
+    .gender {
+        padding: 16px;
+    }
+    .gender__icon {
+        width: 80px;
+        height: 80px;
+    }
+    .gender__name {
+        font-size: 18px;
+        text-transform: initial;
+    }
+}

@@ -42,6 +42,7 @@
           align-items: center;
           padding: 12px 24px;
           border-bottom: 1px solid #d3d3d3;
+          cursor: pointer;
         }
 
         &content {
@@ -100,10 +101,30 @@
   &-- {
     &open {
       top: 0;
-      & .filter__apply-container{
+
+      & .filter__apply-container {
         display: flex;
       }
     }
   }
+}
 
+@media only screen and (min-width: 640px) {
+  .filter__container {
+    grid-area: filters;
+    grid-column-start: 1;
+    height: fit-content;
+    width: 360px;
+    position: unset;
+    margin: 24px 10px 24px 24px;
+    border-radius: 8px;
+  }
+  .filter__close {
+    display: none;
+  }
+  .filter__apply-container {
+    display: flex;
+    position: initial;
+    padding-top: 24px;
+  }
 }

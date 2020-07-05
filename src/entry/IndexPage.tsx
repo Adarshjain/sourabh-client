@@ -37,6 +37,7 @@ const IndexPage = () => {
                 let bannerImages: { url: string, orderOfDisplay: number }[] = JSON.parse(resp.BANNER_IMAGES);
                 setBannerImages(
                     bannerImages
+                        .filter(Boolean)
                         .sort((objB, objA) => objA.orderOfDisplay - objB.orderOfDisplay)
                         .map(img => img.url)
                 )

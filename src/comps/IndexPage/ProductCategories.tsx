@@ -16,7 +16,7 @@ export default function ProductCategories() {
                 {
                     data.categoriesTwo.slice(0, 12).map(cat2 => <Link key={cat2.id} to={`/products?c2=${cat2.id}`}>
                         <div className='index__categories'>
-                            <img loading='lazy' src={cat2.imageUrl} alt="Category Image" className='index__categories-img'/>
+                            <img loading='lazy' src={cat2.imageUrl} alt="Category" className='index__categories-img'/>
                             <div className='index__categories-title'>{cat2.name}</div>
                         </div>
                     </Link>)

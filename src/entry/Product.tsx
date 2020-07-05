@@ -74,38 +74,45 @@ const Product = function () {
         return <>
             <Nav/>
             <Page className="product__page">
-                <Slider>
-                    {
-                        product.images && product.images.map(img => <img loading='lazy' key={img} className="product__image"
-                                                                         alt="productImage" src={img}/>)
-                    }
-                </Slider>
-                <div className="breadcrumb">
-                    <span className="breadcrumb__item">Gold</span>
-                    <Link to={'/products?c2=' + product.categoryTwo.id} className="breadcrumb__item">
-                        <u>{product.categoryTwo.name}</u>
-                    </Link>
-                </div>
-                <div className="product__holder">
-                    <div className='product__name'>{product.name}</div>
-                    {product.description && <div className='product__desc'>{product.description}</div>}
-                    {product.weight && <div className='product__item'>
-                        <div className="product__item-key">Weight</div>
-                        <div className="product__item-value product__item-value--gms">{product.weight}</div>
-                    </div>}
-                    {product.purity && <div className='product__item'>
-                        <div className="product__item-key">Purity</div>
-                        <div className="product__item-value">{product.purity}</div>
-                    </div>}
-                    {product.size && <div className='product__item'>
-                        <div className="product__item-key">Size</div>
-                        <div className="product__item-value">{product.size}</div>
-                    </div>}
-                    {product.gender && <div className='product__item'>
-                        <div className="product__item-key">Gender</div>
-                        <div className="product__item-value product__item-value--gender">{product.gender}</div>
-                    </div>}
-                    <Social id={product.id}/>
+                <div className='product__cont'>
+                    <div className='slide__cont'>
+                        <Slider>
+                            {
+                                product.images && product.images.map(img => <img loading='lazy' key={img}
+                                                                                 className="product__image"
+                                                                                 alt="productImage" src={img}/>)
+                            }
+                        </Slider>
+                    </div>
+                    <div className='prod__cont'>
+                        <div className="breadcrumb">
+                            <span className="breadcrumb__item">Gold</span>
+                            <Link to={'/products?c2=' + product.categoryTwo.id} className="breadcrumb__item">
+                                <u>{product.categoryTwo.name}</u>
+                            </Link>
+                        </div>
+                        <div className="product__holder">
+                            <div className='product__name'>{product.name}</div>
+                            {product.description && <div className='product__desc'>{product.description}</div>}
+                            {product.weight && <div className='product__item'>
+                                <div className="product__item-key">Weight</div>
+                                <div className="product__item-value product__item-value--gms">{product.weight}</div>
+                            </div>}
+                            {product.purity && <div className='product__item'>
+                                <div className="product__item-key">Purity</div>
+                                <div className="product__item-value">{product.purity}</div>
+                            </div>}
+                            {product.size && <div className='product__item'>
+                                <div className="product__item-key">Size</div>
+                                <div className="product__item-value">{product.size}</div>
+                            </div>}
+                            {product.gender && <div className='product__item'>
+                                <div className="product__item-key">Gender</div>
+                                <div className="product__item-value product__item-value--gender">{product.gender}</div>
+                            </div>}
+                            <Social id={product.id}/>
+                        </div>
+                    </div>
                 </div>
                 <SimilarCategoryTwo categoryId={product.categoryTwo.id}/>
                 <SimilarProducts categoryId={product.categoryTwo.id}/>

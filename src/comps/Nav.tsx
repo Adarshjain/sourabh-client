@@ -4,20 +4,18 @@ import {motion, useCycle} from 'framer-motion';
 import {MenuToggle} from "./Navigation/MenuToggle";
 import {Navigation} from "./Navigation/Navigation";
 import '../css/nav.scss';
-import {CategoryTwo} from "../gql/types";
-import {FETCH_SECOND_CATEGORIES} from "../Network/schemaFormats";
+import {CategoryOne, CategoryTwo} from "../gql/types";
+import {FETCH_CATEGORIES, FETCH_SECOND_CATEGORIES} from "../Network/schemaFormats";
 import {useQuery} from "@apollo/react-hooks";
-import Loading from "./Loading";
 import {useHistory} from "react-router";
 import {Link} from "react-router-dom";
 
 export default function Nav() {
-    const {data, loading} = useQuery<{ categoriesTwo: CategoryTwo[] }>(FETCH_SECOND_CATEGORIES);
-    return loading ? <Loading/> : window.innerWidth > 640 ? <FullNav/> :
-        <MobileNav items={data?.categoriesTwo}/>;
+    return window.innerWidth > 640 ? <FullNav/> : <MobileNav/>;
 };
 
-function MobileNav({items}: { items?: CategoryTwo[] }) {
+function MobileNav() {
+    const {data} = useQuery<{ categoriesTwo: CategoryTwo[] }>(FETCH_SECOND_CATEGORIES);
     const [isOpen, toggleOpen] = useCycle(false, true);
     const history = useHistory();
     useEffect(() => {
@@ -44,36 +42,30 @@ function MobileNav({items}: { items?: CategoryTwo[] }) {
                 <MenuToggle isOpen={isOpen} toggle={() => toggleOpen()}/>
             </div>
             <div className='nav__items'>
-                <Navigation isOpen={isOpen} items={items} onItemClick={handleNav}/>
+                <Navigation isOpen={isOpen} items={data?.categoriesTwo} onItemClick={handleNav}/>
             </div>
         </motion.div>
     );
 }
 
 function FullNav() {
-    const variants = {
-        full: {width: 'calc(100% - 80px)'},
-        small: {width: 'calc(80% - 80px)'},
-    };
-    const [isFull, setIsFull] = useState(false);
-    const scrollY = useScrollPosition(60 /*fps*/);
-
-    useEffect(() => {
-        setIsFull(scrollY > 40);
-    }, [scrollY, isFull]);
-
+    const {data,loading} = useQuery<{ categoriesOne: CategoryOne[] }>(FETCH_CATEGORIES);
     return (
-        <div className='flex flex-dr jc-sb nav'
-             style={isFull ? variants.full : variants.small}
-        >
-            <Link to='/'>
-                Sourabh Jewellers
-            </Link>
+        <div className='flex flex-dr jc-sb nav'>
+            <Link to='/' className='nav__logo'>Sourabh Jewellers</Link>
+
             <div>
-                <a href="">Home</a>
-                <a href="">Shop</a>
-                <a href="">Contact</a>
-                <a href="">Search</a>
+                {
+                    data?.categoriesOne.map(categOne => <Link
+                        className='nav__categ'
+                        key={categOne.id}
+                        to={'/products?c1=' + categOne.id}>
+                        {categOne.name}
+                    </Link>)
+                }
+                {
+                    !loading && <Link to='/products' className='nav__categ'>All Products</Link>
+                }
             </div>
         </div>
     );

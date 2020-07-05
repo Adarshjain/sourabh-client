@@ -12,11 +12,11 @@ import {motion, useAnimation} from 'framer-motion';
 import GridItem from "../comps/ProductListPage/GridItem";
 import FooterContact from "../comps/FooterContant";
 
-function getJsonFromUrl(url?:string) {
-    if(!url) url = window.location.search;
+function getJsonFromUrl(url?: string) {
+    if (!url) url = window.location.search;
     let query = url.substr(1);
     let result = {};
-    query.split("&").forEach(function(part) {
+    query.split("&").forEach(function (part) {
         let item = part.split("=");
         result[item[0]] = decodeURIComponent(item[1]);
     });
@@ -37,12 +37,14 @@ const Products = () => {
             const search = location.search;
             let filterObj: QueryFilterProductArgs;
             if (search !== "") {
-                const params:any = getJsonFromUrl();
-                if(params.hasOwnProperty('gender')){
+                const params: any = getJsonFromUrl();
+                if (params.hasOwnProperty('gender')) {
                     filterObj = {gender: [params.gender]}
-                } else if(params.hasOwnProperty('c2')) {
+                } else if (params.hasOwnProperty('c1')) {
+                    filterObj = {categoriesOne: [params.c1]}
+                } else if (params.hasOwnProperty('c2')) {
                     filterObj = {categoriesTwo: [params.c2]}
-                }else{
+                } else {
                     filterObj = {};
                 }
             } else {
@@ -79,29 +81,32 @@ const Products = () => {
             <>
                 <Nav/>
                 <Page className='page__products'>
+                    <div className='list__cont'>
                         {
                             (data2 !== undefined &&
-                                products.length > 0) && <div className='product__count'>We found {products.length} products for you</div>
+                                products.length > 0) &&
+                            <div className='product__count'>We found {products.length} products for you</div>
                         }
-                    <motion.div initial="hidden" animate={controls} variants={{}}
-                                className={'product__list ' + (data2 === undefined || products.length === 0 ? 'cent' : '')}>
-                        {
-                            data2 !== undefined ?
-                                products.length > 0 ? products.map(
-                                    (prod, index) => {
-                                        return <GridItem
-                                            key={prod.id}
-                                            i={index}
-                                            originIndex={0}
-                                            delayPerPixel={0.00085}
-                                            originOffset={originOffset}
-                                            prod={prod}
-                                        />
-                                    })
+                        <motion.div initial="hidden" animate={controls} variants={{}}
+                                    className={'product__list ' + (data2 === undefined || products.length === 0 ? 'cent' : '')}>
+                            {
+                                data2 !== undefined ?
+                                    products.length > 0 ? products.map(
+                                        (prod, index) => {
+                                            return <GridItem
+                                                key={prod.id}
+                                                i={index}
+                                                originIndex={0}
+                                                delayPerPixel={0.00085}
+                                                originOffset={originOffset}
+                                                prod={prod}
+                                            />
+                                        })
+                                        : <div>No products match</div>
                                     : <div>No products match</div>
-                                : <div>No products match</div>
-                        }
-                    </motion.div>
+                            }
+                        </motion.div>
+                    </div>
                     <div className='products__filter-cta-container'>
                         <div className='products__filter-cta' onClick={() => toggleFilter(!isFilterOpen)}>Filters</div>
                     </div>

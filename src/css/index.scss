@@ -54,15 +54,10 @@
     }
 
     &categories {
-      //display: inline-flex;
-      //width: 27%;
-      //flex-wrap: wrap;
       padding: 12px;
-      //justify-content: center;
 
       &- {
         &holder {
-          max-width: 340px;
           justify-content: center;
           display: grid;
           grid-template-columns: 1fr 1fr 1fr;
@@ -96,4 +91,20 @@
     flex-direction: column;
     align-items: center;
   }
+}
+
+@media only screen and (min-width: 640px) {
+  .index__categories-img {
+    width: 150px;
+    height: 150px;
+  }
+  .index__categories-title {
+    font-size: 16px;
+  }
+
+  .index__categories-holder {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 12px;
+  }
+
 }

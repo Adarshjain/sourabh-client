@@ -80,7 +80,7 @@ export default function Filters({isOpen, onFilterUpdate, onClose, appliedFilters
         <div className={'filter__container ' + (isOpen ? 'filter--open' : '')}>
             <div className='filter__header'>
                 <div className='filter__header-title'>Filters</div>
-                <div onClick={onClose}>
+                <div onClick={onClose} className='filter__close'>
                     <Icon name="close-outline" fill='#212121' size="medium"/>
                 </div>
             </div>

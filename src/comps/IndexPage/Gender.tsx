@@ -4,11 +4,10 @@ import '../../css/section.scss';
 import {useQuery} from "@apollo/react-hooks";
 import {Filter} from "../../gql/types";
 import {VALID_FILTERS} from "../../Network/schemaFormats";
-import Loading from "../Loading";
 import {Link} from "react-router-dom";
 
 export default function Gender() {
-    const {data, loading} = useQuery<{ filters: Filter }>(VALID_FILTERS);
+    const {data} = useQuery<{ filters: Filter }>(VALID_FILTERS);
     const genderMap = {
         "Men": "/assets/images/man.svg",
         "Women": "/assets/images/woman.svg",
@@ -18,9 +17,6 @@ export default function Gender() {
     };
     const keys = Object.keys(genderMap);
 
-    if (loading) {
-        return <Loading/>
-    } else {
         if (data !== undefined && data.filters.gender && data.filters.gender.length > 0) {
             return (
                 <Section header="Shop By Gender">
@@ -38,5 +34,4 @@ export default function Gender() {
         } else {
             return <></>
         }
-    }
 };
