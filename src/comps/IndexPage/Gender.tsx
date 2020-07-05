@@ -29,7 +29,7 @@ export default function Gender() {
                             .sort((gA, gB) => keys.indexOf(gA || '') - keys.indexOf(gB || ''))
                             .filter(g => genderMap.hasOwnProperty(g || ""))
                             .map(gender => <Link to={'/products?gender=' + gender} className='gender' key={gender}>
-                                <img className='gender__icon' src={genderMap[gender || ""]} alt={gender}/>
+                                <img loading='lazy' className='gender__icon' src={genderMap[gender || ""]} alt={gender}/>
                                 <div className='gender__name'>{gender}</div>
                             </Link>)
                     }

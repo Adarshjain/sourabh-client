@@ -15,7 +15,7 @@ export default function ImageCard(props: ImageCardInterface) {
     return (
         <Link to={props.href}>
             <div className='image-card' style={props.style} onClick={props.onClick}>
-                <img className='image-card__image' src={props.src}/>
+                <img loading='lazy' className='image-card__image' src={props.src}/>
             </div>
         </Link>
     );

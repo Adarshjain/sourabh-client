@@ -76,7 +76,7 @@ const Product = function () {
             <Page className="product__page">
                 <Slider>
                     {
-                        product.images && product.images.map(img => <img key={img} className="product__image"
+                        product.images && product.images.map(img => <img loading='lazy' key={img} className="product__image"
                                                                          alt="productImage" src={img}/>)
                     }
                 </Slider>

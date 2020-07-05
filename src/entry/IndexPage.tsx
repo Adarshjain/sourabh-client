@@ -51,7 +51,7 @@ const IndexPage = () => {
                 {
                     !loading && <Slider>
                         {
-                            bannerImages.map(img => <img src={img} key={img} className="banner__img" alt=""/>)
+                            bannerImages.map(img => <img loading='lazy' src={img} key={img} className="banner__img" alt=""/>)
                         }
                     </Slider>
                 }
