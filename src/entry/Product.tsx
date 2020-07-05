@@ -107,7 +107,7 @@ const Product = function () {
                                 <div className="product__item-value">{product.size}</div>
                             </div>}
                             {product.gender && <div className='product__item'>
-                                <div className="product__item-key">Gender</div>
+                                <div className="product__item-key">For</div>
                                 <div className="product__item-value product__item-value--gender">{product.gender}</div>
                             </div>}
                             <Social id={product.id}/>
