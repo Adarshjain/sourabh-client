@@ -11,7 +11,7 @@ import {useHistory} from "react-router";
 import {Link} from "react-router-dom";
 
 export default function Nav() {
-    return window.innerWidth > 640 ? <FullNav/> : <MobileNav/>;
+    return window.innerWidth > 720 ? <FullNav/> : <MobileNav/>;
 };
 
 function MobileNav() {
