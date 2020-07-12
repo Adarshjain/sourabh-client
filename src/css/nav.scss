@@ -105,7 +105,7 @@
 }
 
 
-@media only screen and (min-width: 720px) {
+@media only screen and (min-width: 640px) {
   .nav {
     display: flex;
     justify-content: space-between;
@@ -131,3 +131,9 @@
     }
   }
 }
+
+//@media (max-width: 767px) and (orientation: landscape) {
+//  .nav, .board-rate {
+//    display: none;
+//  }
+//}

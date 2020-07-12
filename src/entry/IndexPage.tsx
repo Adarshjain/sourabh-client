@@ -12,6 +12,7 @@ import {useQuery} from "@apollo/react-hooks";
 import {Misc, Product, QueryFilterProductArgs} from "../gql/types";
 import {FETCH_MISC, FILTER_PRODUCTS} from "../Network/schemaFormats";
 import ProductList from "../comps/IndexPage/ProductList";
+import CardsAccepted from "../comps/CardsAcepted";
 
 const IndexPage = () => {
     const {data} = useQuery<{ filterProduct: Product[] }, QueryFilterProductArgs>(FILTER_PRODUCTS, {
@@ -67,6 +68,7 @@ const IndexPage = () => {
                 {
                     featuredProd.length > 0 && <ProductList products={featuredProd} title="Trending Products for you"/>
                 }
+                <CardsAccepted />
                 <Gender/>
                 <FooterContact/>
             </Page>

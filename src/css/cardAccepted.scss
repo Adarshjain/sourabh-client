@@ -1,0 +1,21 @@
+.cards-accepted {
+  text-align: center;
+  font-size: 22px;
+  margin-top: 24px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px 32px 0;
+  text-transform: capitalize;
+
+  &__ {
+    &logo {
+      width: 70px;
+      margin: 8px;
+
+      &-container {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}

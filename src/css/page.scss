@@ -3,4 +3,44 @@
   position: relative;
   top: 80px;
   overflow: auto;
+  padding-bottom: 28px;
+  padding-top: 14px;
+
+  &__landscape {
+    display: none;
+    text-align: center;
+
+    &- {
+      &text {
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 52px;
+      }
+
+      &sub-text {
+        font-size: 14px;
+        margin-top: 8px;
+      }
+    }
+  }
+
 }
+
+//@media (max-width: 767px) and (orientation: landscape) {
+//  .page__products {
+//    display: flex;
+//    justify-content: center;
+//  }
+//  .page > * {
+//    display: none !important;
+//  }
+//  .page__landscape {
+//    display: initial !important;
+//  }
+//  .page .eva-hover {
+//    position: absolute;
+//    left: 50%;
+//    transform: translate(-50%);
+//  }
+//
+//}

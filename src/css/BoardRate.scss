@@ -1,0 +1,22 @@
+.board-rate {
+  position: relative;
+  top: 85px;
+  z-index: 28;
+  background-color: white;
+  padding: 8px 16px;
+  border-radius: 18px;
+
+
+  &__ {
+    &value {
+      text-align: center;
+    }
+  }
+}
+
+@media only screen and (min-width: 640px) {
+  .board-rate {
+    width: 400px;
+    margin: 0 auto;
+  }
+}

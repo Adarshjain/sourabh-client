@@ -114,7 +114,7 @@ const Products = () => {
                              onFilterUpdate={updateFilter}
                              onClose={() => toggleFilter(false)}
                              appliedFilters={localFilters}/>
-                    <FooterContact/>
+                    {/*<FooterContact/>*/}
                 </Page>
             </>
         );
