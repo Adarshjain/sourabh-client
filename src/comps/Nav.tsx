@@ -50,7 +50,13 @@ function MobileNav({boardRate}:{boardRate?:string}) {
         <>
             <motion.div className={'nav ' + (isOpen ? 'nav--open' : '')}>
                 <div className='flex flex-dr jc-sb nav__header'>
-                    <Link to='/'>Sourabh<br/>Jewellers</Link>
+                    <Link to='/' className='logo__holder'>
+                        <img src="/assets/images/logo.png" alt="Sunil Jewellers" className='logo'/>
+                        <div>
+                            <div className='logo__name'>SUNIL JEWELLERS</div>
+                            <div className='logo__location'>SRIKALAHASTHI</div>
+                        </div>
+                    </Link>
                     <MenuToggle isOpen={isOpen} toggle={() => toggleOpen()}/>
                 </div>
                 <div className='nav__items'>
@@ -67,7 +73,13 @@ function FullNav({boardRate}:{boardRate?:string}) {
     return (
         <>
             <div className='flex flex-dr jc-sb nav'>
-                <Link to='/' className='nav__logo'>Sourabh Jewellers</Link>
+                <Link to='/' className='nav__logo logo__holder'>
+                    <img src="/assets/images/logo.png" alt="Sunil Jewellers" className='logo'/>
+                    <div>
+                        <div className='logo__name'>SUNIL JEWELLERS</div>
+                        <div className='logo__location'>SRIKALAHASTHI</div>
+                    </div>
+                </Link>
 
                 <div>
                     {
