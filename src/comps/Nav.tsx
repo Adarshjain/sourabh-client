@@ -11,7 +11,7 @@ import {Link} from "react-router-dom";
 import BoardRate from "./BoardRate";
 
 export default function Nav() {
-    const {data: dataMisc} = useQuery<{ findMisc: Misc }>(FETCH_MISC, {variables: {key: "BANNER_IMAGES"}});
+    const {data: dataMisc} = useQuery<{ findMisc: Misc }>(FETCH_MISC, {variables: {key: "BOARD_RATE"}});
     const [boardRate,setBoardRate] = useState("");
     useEffect(() => {
         if (dataMisc !== undefined && dataMisc.findMisc !== undefined) {
