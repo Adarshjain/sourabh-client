@@ -8,6 +8,8 @@ import './css/reset.css';
 import './css/checkbox.scss';
 
 function App() {
+    //@ts-ignore
+    window.Sentry.init({ dsn: 'https://da3498ecc47c4e9a90767ae609cda3f3@o420804.ingest.sentry.io/5339634' });
     const IndexPage = lazy(() => import('./entry/IndexPage'));
     const Products = lazy(() => import('./entry/Products'));
     const Product = lazy(() => import('./entry/Product'));
