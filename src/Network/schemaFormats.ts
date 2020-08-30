@@ -54,6 +54,8 @@ export const FETCH_PRODUCTS = gql`
             price
             favorite
             weight
+            netWeight
+            grossWeight
             purity
             gender
             size
@@ -82,6 +84,8 @@ export const VALID_FILTERS = gql`
             purity
             size
             weight
+            netWeight
+            grossWeight
         }
     }
 `;
@@ -93,6 +97,8 @@ export const FILTER_PRODUCTS = gql`
         $categoriesTwo: [ID]
         $price: [Float]
         $weight: [String]
+        $netWeight: [String]
+        $grossWeight: [String]
         $purity: [String]
         $gender: [String]
         $size: [String]
@@ -106,6 +112,8 @@ export const FILTER_PRODUCTS = gql`
             categoriesTwo:$categoriesTwo
             price:$price
             weight:$weight
+            netWeight:$netWeight
+            grossWeight:$grossWeight
             purity:$purity
             gender:$gender
             size:$size
@@ -137,6 +145,8 @@ export const FILTER_PRODUCTS = gql`
             price
             favorite
             weight
+            netWeight
+            grossWeight
             purity
             gender
             size

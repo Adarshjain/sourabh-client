@@ -95,9 +95,13 @@ const Product = function () {
                             <div className='product__name'>{product.name}</div>
                             {product.description && <div className='product__desc'>{product.description}</div>}
                             {product.isHallmark && <img alt='Hallmark' className='product__hallmark' src='/assets/images/hallmark.png' />}
-                            {product.weight && <div className='product__item'>
-                                <div className="product__item-key">Weight</div>
-                                <div className="product__item-value product__item-value--gms">{product.weight}</div>
+                            {product.grossWeight && <div className='product__item'>
+                                <div className="product__item-key">Gross Weight</div>
+                                <div className="product__item-value product__item-value--gms">{product.grossWeight}</div>
+                            </div>}
+                            {product.netWeight && <div className='product__item'>
+                                <div className="product__item-key">Net Weight</div>
+                                <div className="product__item-value product__item-value--gms">{product.netWeight}</div>
                             </div>}
                             {product.purity && <div className='product__item'>
                                 <div className="product__item-key">Purity</div>

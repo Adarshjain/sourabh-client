@@ -91,6 +91,8 @@ export type MutationUpdateProductArgs = {
   favorite?: Maybe<Scalars['Boolean']>;
   images?: Maybe<Array<Maybe<Scalars['String']>>>;
   weight?: Maybe<Scalars['String']>;
+  netWeight?: Maybe<Scalars['String']>;
+  grossWeight?: Maybe<Scalars['String']>;
   purity?: Maybe<Scalars['String']>;
   gender?: Maybe<Scalars['String']>;
   size?: Maybe<Scalars['String']>;
@@ -122,6 +124,8 @@ export type Product = {
   price?: Maybe<Scalars['Float']>;
   favorite?: Maybe<Scalars['Boolean']>;
   weight?: Maybe<Scalars['String']>;
+  netWeight?: Maybe<Scalars['String']>;
+  grossWeight?: Maybe<Scalars['String']>;
   purity?: Maybe<Scalars['String']>;
   gender?: Maybe<Scalars['String']>;
   size?: Maybe<Scalars['String']>;
@@ -165,6 +169,8 @@ export type QueryFilterProductArgs = {
   categoriesTwo?: Maybe<Array<Maybe<Scalars['ID']>>>;
   price?: Maybe<Array<Maybe<Scalars['Float']>>>;
   weight?: Maybe<Array<Maybe<Scalars['String']>>>;
+  netWeight?: Maybe<Array<Maybe<Scalars['String']>>>;
+  grossWeight?: Maybe<Array<Maybe<Scalars['String']>>>;
   purity?: Maybe<Array<Maybe<Scalars['String']>>>;
   gender?: Maybe<Array<Maybe<Scalars['String']>>>;
   size?: Maybe<Array<Maybe<Scalars['String']>>>;

@@ -13,9 +13,10 @@
       position: relative;
 
       img {
-        width: 100%;
         border-radius: 6px;
-        min-height: 190px;
+        width: 200px;
+        height: 200px;
+        object-fit: contain;
       }
 
       &__ {
@@ -96,7 +97,7 @@
       line-height: 20px;
     }
 
-    &hallmark{
+    &hallmark {
       width: 35px;
       height: 30px;
       display: block;
@@ -202,7 +203,7 @@
   padding-bottom: 60px;
 }
 
-.product-item.product-item--hallmark:after{
+.product-item.product-item--hallmark:after {
   position: absolute;
   top: 12px;
   left: 10px;

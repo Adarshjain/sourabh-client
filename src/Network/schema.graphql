@@ -18,6 +18,8 @@ type Filter {
     categoriesTwo: [CategoryTwo]!
     price: [Float]
     weight: [String]
+    netWeight: [String]
+    grossWeight: [String]
     purity: [String]
     gender: [String]
     size: [String]
@@ -54,6 +56,8 @@ type Mutation {
         favorite: Boolean
         images: [String]
         weight: String
+        netWeight: String
+        grossWeight: String
         purity: String
         gender: String
         size: String
@@ -76,6 +80,8 @@ type Product {
     price: Float
     favorite: Boolean
     weight: String
+    netWeight: String
+    grossWeight: String
     purity: String
     gender: String
     size: String
@@ -98,6 +104,8 @@ type Query {
         categoriesTwo: [ID]
         price: [Float]
         weight: [String]
+        netWeight: [String]
+        grossWeight: [String]
         purity: [String]
         gender: [String]
         size: [String]

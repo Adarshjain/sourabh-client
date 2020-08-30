@@ -21,3 +21,10 @@
   width: 28px;
   margin: 4px;
 }
+
+@media only screen and (max-width: 640px) {
+  .BrainhubCarouselItem {
+    height: 100vw;
+  }
+
+}
