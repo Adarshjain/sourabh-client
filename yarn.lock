@@ -1998,39 +1998,6 @@
     style-value-types "^3.1.7"
     tslib "^1.10.0"
 
-"@react-hook/event@^1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@react-hook/event/-/event-1.2.1.tgz#4ebaff343ea3ab0f7c98d2e0e26e3aa719a69ebf"
-  integrity sha512-kzCZfUAtJl6A9Wvr+OLfVtjbqhC8o5/E0hqyHHQ6gX7/Gm/XlabM5OMCcoiipNu9PRMIfTlbeI4a8QOE6O00Qw==
-  dependencies:
-    "@react-hook/latest" "^1.0.2"
-    "@react-hook/passive-layout-effect" "^1.2.0"
-
-"@react-hook/latest@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@react-hook/latest/-/latest-1.0.2.tgz#767eb6974f91eef353981b8b60a87147dadecb18"
-  integrity sha512-zLtOIToct1EBTbwldkMJsXC2eCsmWOOP7z6UG0M/sCgnPExtIjvVMCpPESvPnMbQzDZytXVy0nvMbUuK2gZs2A==
-
-"@react-hook/passive-layout-effect@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@react-hook/passive-layout-effect/-/passive-layout-effect-1.2.0.tgz#1232f0b08f9bfd9f87a2898a3ae50d5f7731d806"
-  integrity sha512-obGcMHoeiG/qp9djzlxwvlsAzL4a+JFaxTLvJv8GykipmS/TEkfvdcpu6orE1ZL4dAT7OpoGwHDc/LGJbkZzXQ==
-
-"@react-hook/throttle@^2.2.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@react-hook/throttle/-/throttle-2.2.0.tgz#d0402714a06e1ba0bc1da1fdf5c3c5cd0e08d45a"
-  integrity sha512-LJ5eg+yMV8lXtqK3lR+OtOZ2WH/EfWvuiEEu0M3bhR7dZRfTyEJKxH1oK9uyBxiXPtWXiQggWbZirMCXam51tg==
-  dependencies:
-    "@react-hook/latest" "^1.0.2"
-
-"@react-hook/window-scroll@^1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@react-hook/window-scroll/-/window-scroll-1.3.0.tgz#07914239a452075c7eb28d15ed0e2fd45aa2d65b"
-  integrity sha512-LdYnCL22pFI+LTs85Fi2OQHSKWkzIuHFgv8lA+wwuaPxLOEhWR5bzJ21iygUH9X4meeLVRZKEbfpYi3OWWD4GQ==
-  dependencies:
-    "@react-hook/event" "^1.2.1"
-    "@react-hook/throttle" "^2.2.0"
-
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@samverschueren/stream-to-observable/-/stream-to-observable-0.3.0.tgz#ecdf48d532c58ea477acfcab80348424f8d0662f"
@@ -5774,11 +5741,6 @@ follow-redirects@^1.0.0:
   dependencies:
     debug "^3.0.0"
 
-font-awesome@^4.3.0:
-  version "4.7.0"
-  resolved "https://registry.yarnpkg.com/font-awesome/-/font-awesome-4.7.0.tgz#8fa8cf0411a1a31afd07b06d2902bb9fc815a133"
-  integrity sha1-j6jPBBGhoxr9B7BtKQK7n8gVoTM=
-
 for-in@^0.1.3:
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-0.1.8.tgz#d8773908e31256109952b1fdb9b3fa867d2775e1"
@@ -7780,18 +7742,16 @@ json3@^3.3.2:
   integrity sha512-c7/8mbUsKigAbLkD5B010BK4D9LZm7A1pNItkEwiUZRpIN66exu/e7YQWysGun+TRKaJp8MhemM+VkfWv42aCA==
 
 json5@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/json5/-/json5-1.0.1.tgz#779fb0018604fa854eacbf6252180d83543e3dbe"
-  integrity sha512-aKS4WQjPenRxiQsC93MNfjx+nbF4PAdYzmd/1JIj8HYzqfbu86beTuNgXDzPknWk0n0uARlyewZo4s++ES36Ow==
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/json5/-/json5-1.0.2.tgz#63d98d60f21b313b77c4d6da18bfa69d80e1d593"
+  integrity sha512-g1MWMLBiz8FKi1e4w0UyVL3w+iJceWAFBAaBnnGKOpNa5f8TLktkbre1+s6oICydWAm+HRUGTmI+//xv2hvXYA==
   dependencies:
     minimist "^1.2.0"
 
 json5@^2.1.2:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/json5/-/json5-2.1.2.tgz#43ef1f0af9835dd624751a6b7fa48874fb2d608e"
-  integrity sha512-MoUOQ4WdiN3yxhm7NEVJSJrieAo5hNSLQ5sj05OTRHPL9HOBy8u4Bu88jsC1jvqAdN+E1bJmsUcZH+1HQxliqQ==
-  dependencies:
-    minimist "^1.2.5"
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/json5/-/json5-2.2.3.tgz#78cd6f1a19bdc12b73db5ad0c61efd66c1e29283"
+  integrity sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==
 
 jsonfile@^4.0.0:
   version "4.0.0"
@@ -10330,7 +10290,7 @@ prompts@^2.0.1:
     kleur "^3.0.3"
     sisteransi "^1.0.4"
 
-prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -10489,14 +10449,6 @@ raw-body@2.4.0:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
-react-alice-carousel@^1.19.3:
-  version "1.19.3"
-  resolved "https://registry.yarnpkg.com/react-alice-carousel/-/react-alice-carousel-1.19.3.tgz#dc33b431aca727d999407f1e529f522b15dc3bc2"
-  integrity sha512-FaOQ/f7C/4cBuXr2tA4YgVyVrvWI7VbccGxJpu+rCsnnUlcN0YLz+20iJ2TFCXJp9M+/FjBratUNC7vQBrMQPw==
-  dependencies:
-    prop-types "^15.5.10"
-    vanilla-swipe "1.2.0"
-
 react-app-polyfill@^1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/react-app-polyfill/-/react-app-polyfill-1.0.6.tgz#890f8d7f2842ce6073f030b117de9130a5f385f0"
@@ -10560,14 +10512,6 @@ react-eva-icons@^0.0.8:
   integrity sha512-zuumG1Ijld0tOrOiwJ01GownYKWDsgUgNDFu2ODTtjUBL9pYvIH5AGRIa4h2rek03wLOvyiQbgbSW6aoeZIvrQ==
   dependencies:
     eva-icons "^1.1.1"
-
-react-fa@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/react-fa/-/react-fa-5.0.0.tgz#d571732856c6cb2c155c46daef018ba67a75b973"
-  integrity sha512-pBEJigNkDJPAP/P9mQXT55VbJbbtwqi4ayieXuFvGpd+gl3aZ9IbjjVKJihdhdysJP0XRgrSa3sT3yOmkQi8wQ==
-  dependencies:
-    font-awesome "^4.3.0"
-    prop-types "^15.5.8"
 
 react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4:
   version "16.13.1"
@@ -12651,11 +12595,6 @@ value-equal@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/value-equal/-/value-equal-1.0.1.tgz#1e0b794c734c5c0cade179c437d356d931a34d6c"
   integrity sha512-NOJ6JZCAWr0zlxZt+xqCHNTEKOsrks2HQd4MqhP1qy4z1SkbEP467eNx6TgDKXMvUOb+OENfJCZwM+16n7fRfw==
-
-vanilla-swipe@1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/vanilla-swipe/-/vanilla-swipe-1.2.0.tgz#dd36671ed8e388c6ce73e3d75dcee596f001f7a0"
-  integrity sha512-1yNnsfHcl67Y24HGJc/zrC9omRBzzxqvC6D5apOXMqGukuz0Zha1ydKJM7AUL/dB2w7Bd7UsI2Uw7+AE4soDaA==
 
 vary@~1.1.2:
   version "1.1.2"
